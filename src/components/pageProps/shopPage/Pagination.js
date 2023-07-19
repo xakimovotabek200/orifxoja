@@ -69,7 +69,7 @@ const Pagination = ({ itemsPerPage }) => {
         />
 
         <p className="text-base font-normal text-lightText">
-          Products from {itemStart === 0 ? 1 : itemStart} to {endOffset} of{" "}
+          Mahsulot from {itemStart === 0 ? 1 : itemStart} to {endOffset} of{" "}
           {items.length}
         </p>
       </div>
