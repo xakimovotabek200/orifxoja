@@ -50,7 +50,7 @@ const Contact = () => {
       setErrEmail("Enter your Email");
     } else {
       if (!EmailValidation(email)) {
-        setErrEmail("Enter a Valid Email");
+        setErrEmail("Enter a Valid Emaisl");
       }
     }
     if (!messages) {
@@ -65,7 +65,7 @@ const Contact = () => {
 
   return (
     <div className="max-w-container mx-auto px-4">
-      <Breadcrumbs title="Contact" prevLocation={prevLocation} />
+      <Breadcrumbs title="Aloqa" prevLocation={prevLocation} />
       {successMsg ? (
         <p className="pb-20 w-96 font-medium text-green-500">{successMsg}</p>
       ) : (
@@ -76,14 +76,14 @@ const Contact = () => {
           <div className="w-[500px] h-auto py-6 flex flex-col gap-6">
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-                Ismi
+                Ism
               </p>
               <input
                 onChange={handleName}
                 value={clientName}
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor"
                 type="text"
-                placeholder="Enter your name here"
+                placeholder="Bu yerga ismingizni kiriting"
               />
               {errClientName && (
                 <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
@@ -101,7 +101,7 @@ Elektron pochta
                 value={email}
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor"
                 type="email"
-                placeholder="Enter your name here"
+                placeholder="Bu yerga emailingizni kiriting"
               />
               {errEmail && (
                 <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
@@ -112,7 +112,7 @@ Elektron pochta
             </div>
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-Xabarlar
+              xabarlar
               </p>
               <textarea
                 onChange={handleMessages}
@@ -121,7 +121,7 @@ Xabarlar
                 rows="3"
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor resize-none"
                 type="text"
-                placeholder="Enter your name here"
+                placeholder="Bu yerga matn kiriting"
               ></textarea>
               {errMessages && (
                 <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
@@ -134,7 +134,7 @@ Xabarlar
               onClick={handlePost}
               className="w-44 bg-primeColor text-gray-200 h-10 font-titleFont text-base tracking-wide font-semibold hover:bg-black hover:text-white duration-200"
             >
-              Post
+             Jo'natish
             </button>
           </div>
         </form>

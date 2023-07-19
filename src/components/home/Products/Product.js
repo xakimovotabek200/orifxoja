@@ -58,8 +58,8 @@ const Product = (props) => {
                 )
               }
               className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
-            >  
-Savatchaga qo'shish
+            >
+              Savatga qo'shish
               <span>
                 <FaShoppingCart />
               </span>
@@ -68,7 +68,7 @@ Savatchaga qo'shish
               onClick={handleProductDetails}
               className="text-[#767676] hover:text-primeColor text-sm font-normal border-b-[1px] border-b-gray-200 hover:border-b-primeColor flex items-center justify-end gap-2 hover:cursor-pointer pb-1 duration-300 w-full"
             >
-             Tafsilotlarni ko'rish
+              Xammasini korish
               <span className="text-lg">
                 <MdOutlineLabelImportant />
               </span>

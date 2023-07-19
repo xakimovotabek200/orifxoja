@@ -5,7 +5,11 @@ const ProductsOnSale = () => {
   return (
     <div>
       <h3 className="font-titleFont text-xl font-semibold mb-6 underline underline-offset-4 decoration-[1px]">
+<<<<<<< HEAD
       Sotuvdagi mahsulotlar
+=======
+        Aksiyadagi mahsukotlar
+>>>>>>> 3d7e66db397859b270454382f516cb1364fafe90
       </h3>
       <div className="flex flex-col gap-2">
         {SplOfferData.map((item) => (

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { logoLight } from "../../assets/images";
 
 const SignUp = () => {
-  // ============= Initial State Start here =============
   const [clientName, setClientName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -14,8 +13,6 @@ const SignUp = () => {
   const [country, setCountry] = useState("");
   const [zip, setZip] = useState("");
   const [checked, setChecked] = useState(false);
-  // ============= Initial State End here ===============
-  // ============= Error Msg Start here =================
   const [errClientName, setErrClientName] = useState("");
   const [errEmail, setErrEmail] = useState("");
   const [errPhone, setErrPhone] = useState("");
@@ -24,9 +21,7 @@ const SignUp = () => {
   const [errCity, setErrCity] = useState("");
   const [errCountry, setErrCountry] = useState("");
   const [errZip, setErrZip] = useState("");
-  // ============= Error Msg End here ===================
   const [successMsg, setSuccessMsg] = useState("");
-  // ============= Event Handler Start here =============
   const handleName = (e) => {
     setClientName(e.target.value);
     setErrClientName("");
@@ -59,14 +54,11 @@ const SignUp = () => {
     setZip(e.target.value);
     setErrZip("");
   };
-  // ============= Event Handler End here ===============
-  // ================= Email Validation start here =============
   const EmailValidation = (email) => {
     return String(email)
       .toLowerCase()
       .match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
   };
-  // ================= Email Validation End here ===============
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -103,8 +95,7 @@ const SignUp = () => {
       if (!zip) {
         setErrZip("Enter the zip code of your area");
       }
-      // ============== Getting the value ==============
-      if (
+         if (
         clientName &&
         email &&
         EmailValidation(email) &&
