@@ -138,9 +138,9 @@ const SignUp = () => {
           </Link>
           <div className="flex flex-col gap-1 -mt-1">
             <h1 className="font-titleFont text-xl font-medium">
-              Get started for free
+            Bepul boshlang
             </h1>
-            <p className="text-base">Create your account to access more</p>
+            <p className="text-base">Ko'proq kirish uchun hisobingizni yarating</p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
             <span className="text-green-500 mt-1">
@@ -148,7 +148,7 @@ const SignUp = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Get started fast with OREBI
+OREBI bilan tezda boshlang
               </span>
               <br />
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
@@ -161,7 +161,7 @@ const SignUp = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Access all OREBI services
+              Barcha OREBI xizmatlariga kirish
               </span>
               <br />
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
@@ -174,7 +174,7 @@ const SignUp = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Trusted by online Shoppers
+              Onlayn xaridorlar tomonidan ishonchli
               </span>
               <br />
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
@@ -186,13 +186,13 @@ const SignUp = () => {
               © OREBI
             </p>
             <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-              Terms
+            Shartlar
             </p>
             <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-              Privacy
+            Maxfiylik
             </p>
             <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-              Security
+            Xavfsizlik
             </p>
           </div>
         </div>
@@ -208,7 +208,7 @@ const SignUp = () => {
                 className="w-full h-10 bg-primeColor rounded-md text-gray-200 text-base font-titleFont font-semibold 
             tracking-wide hover:bg-black hover:text-white duration-300"
               >
-                Sign in
+Tizimga kirish
               </button>
             </Link>
           </div>
@@ -216,13 +216,13 @@ const SignUp = () => {
           <form className="w-full lgl:w-[500px] h-screen flex items-center justify-center">
             <div className="px-6 py-4 w-full h-[96%] flex flex-col justify-start overflow-y-scroll scrollbar-thin scrollbar-thumb-primeColor">
               <h1 className="font-titleFont underline underline-offset-4 decoration-[1px] font-semibold text-2xl mdl:text-3xl mb-4">
-                Create your account
+              Hisob qaydnomangizni yarating
               </h1>
               <div className="flex flex-col gap-3">
                 {/* client name */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Full Name
+To'liq ism
                   </p>
                   <input
                     onChange={handleName}
@@ -241,7 +241,7 @@ const SignUp = () => {
                 {/* Email */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Work Email
+                  Ishchi elektron pochta
                   </p>
                   <input
                     onChange={handleEmail}
@@ -260,7 +260,7 @@ const SignUp = () => {
                 {/* Phone Number */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Phone Number
+Telefon raqami
                   </p>
                   <input
                     onChange={handlePhone}
@@ -279,7 +279,7 @@ const SignUp = () => {
                 {/* Password */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Password
+Parol
                   </p>
                   <input
                     onChange={handlePassword}
@@ -298,7 +298,7 @@ const SignUp = () => {
                 {/* Address */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Address
+                  Manzil
                   </p>
                   <input
                     onChange={handleAddress}
@@ -317,7 +317,7 @@ const SignUp = () => {
                 {/* City */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    City
+                  Shahar
                   </p>
                   <input
                     onChange={handleCity}
@@ -336,7 +336,7 @@ const SignUp = () => {
                 {/* Country */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Country
+                  Mamlakat
                   </p>
                   <input
                     onChange={handleCountry}
@@ -347,7 +347,7 @@ const SignUp = () => {
                   />
                   {errCountry && (
                     <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
-                      ota kot <span className="font-bold italic mr-1">!</span>
+                      <span className="font-bold italic mr-1">!</span>
                       {errCountry}
                     </p>
                   )}
@@ -355,7 +355,7 @@ const SignUp = () => {
                 {/* Zip code */}
                 <div className="flex flex-col gap-.5">
                   <p className="font-titleFont text-base font-semibold text-gray-600">
-                    Zip/Postal code
+Pochta indeksi
                   </p>
                   <input
                     onChange={handleZip}
@@ -379,25 +379,26 @@ const SignUp = () => {
                     type="checkbox"
                   />
                   <p className="text-sm text-primeColor">
-                    I agree to the OREBI{" "}
-                    <span className="text-blue-500">Terms of Service </span>and{" "}
-                    <span className="text-blue-500">Privacy Policy</span>.
+                  Men OREBIga roziman{" "}
+                    <span className="text-blue-500">  Xizmat ko'rsatish shartlari </span>va{" "}
+                    <span className="text-blue-500">Maxfiylik siyosati</span>.
                   </p>
                 </div>
                 <button
                   onClick={handleSignUp}
-                  className={`${checked
+                  className={`${
+                    checked
                       ? "bg-primeColor hover:bg-black hover:text-white cursor-pointer"
                       : "bg-gray-500 hover:bg-gray-500 hover:text-gray-200 cursor-none"
-                    } w-full text-gray-200 text-base font-medium h-10 rounded-md hover:text-white duration-300`}
+                  } w-full text-gray-200 text-base font-medium h-10 rounded-md hover:text-white duration-300`}
                 >
-                  Create Account
+Hisob yaratish
                 </button>
-                <p className="text-sm otakot text-center font-titleFont font-medium">
-                  Don't have an Account?{" "}
+                <p className="text-sm text-center font-titleFont font-medium">
+Hisobingiz yo'qmi?{" "}
                   <Link to="/signin">
                     <span className="hover:text-blue-600 duration-300">
-                      Sign in
+Tizimga kirish
                     </span>
                   </Link>
                 </p>

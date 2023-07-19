@@ -71,12 +71,12 @@ const Contact = () => {
       ) : (
         <form className="pb-20">
           <h1 className="font-titleFont font-semibold text-3xl">
-            Fill up a Form
+          Shaklni to'ldiring
           </h1>
           <div className="w-[500px] h-auto py-6 flex flex-col gap-6">
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-                Name
+                Ismi
               </p>
               <input
                 onChange={handleName}
@@ -94,7 +94,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-                Email
+Elektron pochta
               </p>
               <input
                 onChange={handleEmail}
@@ -112,7 +112,7 @@ const Contact = () => {
             </div>
             <div>
               <p className="text-base font-titleFont font-semibold px-2">
-                Messages
+Xabarlar
               </p>
               <textarea
                 onChange={handleMessages}
