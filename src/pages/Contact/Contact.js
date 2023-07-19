@@ -50,7 +50,7 @@ const Contact = () => {
       setErrEmail("Enter your Email");
     } else {
       if (!EmailValidation(email)) {
-        setErrEmail("Enter a Valid Email");
+        setErrEmail("Enter a Valid Emaisl");
       }
     }
     if (!messages) {
