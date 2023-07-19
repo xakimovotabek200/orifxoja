@@ -83,7 +83,7 @@ const HeaderBottom = () => {
               type="text"
               onChange={handleSearch}
               value={searchQuery}
-              placeholder="Search your products here"
+              placeholder="Qidiruv"
             />
             <FaSearch className="w-5 h-5" />
             {searchQuery && (
@@ -129,7 +129,7 @@ const HeaderBottom = () => {
               </div>
             )}
           </div>
-          <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
+          {/* <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
             <div onClick={() => setShowUser(!showUser)} className="flex">
               <FaUser />
               <FaCaretDown />
@@ -159,7 +159,8 @@ const HeaderBottom = () => {
                 </li>
               </motion.ul>
             )}
-            <Link to="/cart">
+          </div> */}
+          <Link to="/cart">
               <div className="relative">
                 <FaShoppingCart />
                 <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
@@ -167,7 +168,6 @@ const HeaderBottom = () => {
                 </span>
               </div>
             </Link>
-          </div>
         </Flex>
       </div>
     </div>
