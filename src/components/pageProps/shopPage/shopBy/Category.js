@@ -8,7 +8,7 @@ const Category = () => {
   const items = [
     {
       _id: 990,
-      title: "New Arrivals",
+      title: "Yangi kelganlar",
       icons: true,
     },
     {
@@ -17,21 +17,21 @@ const Category = () => {
     },
     {
       _id: 992,
-      title: "Accessories",
+      title: "Aksessuarlar",
       icons: true,
     },
     {
       _id: 993,
-      title: "Electronics",
+      title: "Elektronika",
     },
     {
       _id: 994,
-      title: "Others",
+      title: "Bishqalar",
     },
   ];
   return (
     <div className="w-full">
-      <NavTitle title="Shop by Category" icons={false} />
+      <NavTitle title="Turkum bo'yicha xarid qiling" icons={false} />
       <div>
         <ul className="flex flex-col gap-4 text-sm lg:text-base text-[#767676]">
           {items.map(({ _id, title, icons }) => (
