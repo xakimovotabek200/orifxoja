@@ -32,7 +32,7 @@ export const navBarList = [
   },
   {
     _id: 1004,
-    title: "Contact",
+    title: "Aloqa",
     link: "contact",
   },
  
