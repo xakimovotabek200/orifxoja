@@ -9,9 +9,7 @@ const Shop = () => {
   const itemsPerPageFromBanner = (itemsPerPage) => {
     setItemsPerPage(itemsPerPage);
   };
-  fetch('http://komiljonovdev.uz/Bobur/legendApi')
-  .then(response => response.json())
-  .then(json => console.log(json))
+
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Mahsulotlar" />
