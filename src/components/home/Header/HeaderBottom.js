@@ -15,14 +15,20 @@ const HeaderBottom = () => {
   const navigate = useNavigate();
   const ref = useRef();
   useEffect(() => {
-    document.body.addEventListener("click", (e) => {
+    const handleClick = (e) => {
       if (ref.current.contains(e.target)) {
         setShow(true);
       } else {
         setShow(false);
       }
-    });
-  }, [show, ref]);
+    };
+  
+    document.body.addEventListener("click", handleClick);
+  
+    return () => {
+      document.body.removeEventListener("click", handleClick);
+    };
+  }, [show, ref]); 
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
