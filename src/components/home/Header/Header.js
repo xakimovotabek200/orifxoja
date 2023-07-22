@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { MdClose } from "react-icons/md";
-import { HiMenuAlt2 } from "react-icons/hi";
 import { motion } from "framer-motion";
-import { logo, logoLight } from "../../../assets/images";
-import Image from "../../designLayouts/Image";
+import React, { useEffect, useState } from "react";
+import { HiMenuAlt2 } from "react-icons/hi";
+import { MdClose } from "react-icons/md";
+import { Link, NavLink, Route, useLocation } from "react-router-dom";
+import { logoLight } from "../../../assets/images";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
-import Legend from "./Legend.png"
+import Image from "../../designLayouts/Image";
+import Formalar from "../../pageProps/shopPage/shopBy/Formalar";
+import Futbolka from "../../pageProps/shopPage/shopBy/Futbolka";
+import Ryukzak from "../../pageProps/shopPage/shopBy/Ryukzak";
+import Shoes from "../../pageProps/shopPage/shopBy/Shoes";
+import Legend from "./Legend.png";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(true);
@@ -97,7 +101,7 @@ const Header = () => {
                         onClick={() => setCategory(!category)}
                         className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
                       >
-                         Categoriya{" "}
+                        Categoriya{" "}
                         <span className="text-lg">{category ? "-" : "+"}</span>
                       </h1>
                       {category && (
@@ -107,11 +111,26 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          <li className="headerSedenavLi">Futbolkalar</li>
+                          <Route>
+                            <Route
+                              path="/futbolka"
+                              element={<Futbolka />}
+                            ></Route>
+                            <Route
+                              path="/formalar"
+                              element={<Formalar />}
+                            ></Route>
+                            <Route
+                              path="/ryukzak"
+                              element={<Ryukzak />}
+                            ></Route>
+                            <Route path="/shoes" element={<Shoes />}></Route>
+                          </Route>{" "}
+                          {/* <li className="headerSedenavLi">Futbolkalar</li>
                           <li className="headerSedenavLi">Sumkalar</li>
                           <li className="headerSedenavLi">Oyoq kiyimlar</li>
                           <li className="headerSedenavLi">Ryugzaklar</li>
-                          <li className="headerSedenavLi">Formalar</li>
+                          <li className="headerSedenavLi">Formalar</li> */}
                         </motion.ul>
                       )}
                     </div>
@@ -130,7 +149,7 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                       <li className="headerSedenavLi">Yangi kelgan</li>
+                          <li className="headerSedenavLi">Yangi kelgan</li>
                           <li className="headerSedenavLi">Gadjetlar</li>
                           <li className="headerSedenavLi">Aksessuarlar</li>
                           <li className="headerSedenavLi">Elektronika</li>
