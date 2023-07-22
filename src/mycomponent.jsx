@@ -1,36 +1,29 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const MyComponent = () => {
-  const [apiData, setApiData] = useState(null);
+  const [products, setProducts] = useState("");
+  const fetchUser = async () => {
+    const fetchUserUrl =
+      "https://komiljonovdev.uz/Bobur/legendApi/api/getProduct";
+    try {
+      const response = await axios.get(fetchUserUrl);
+      setProducts(response.data.products);
+      console.log(response.data);
+    } catch (error) {
+      console.error("fetchUser xatolik", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://komiljonovdev.uz/Bobur/legendApi"
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok.");
-        }
-        const data = await response.json();
-        setApiData(data); // Store the API response in the state
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+    fetchUser();
+  }, []);
 
-    fetchData();
-  }, []); // Empty dependency array means this effect runs only once on component mount
-
-  // You can use the apiData state in your component now
-  // For example, you might render the data in the component like this:
   return (
     <div>
-      {apiData ? (
-        <pre>{JSON.stringify(apiData, null, 2)}</pre>
-      ) : (
-        <p>Loading...</p>
-      )}
+      {Array.isArray(products)
+        ? products.map((item, index) => <h1 key={index}>{item.name}</h1>)
+        : null}
     </div>
   );
 };

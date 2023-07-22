@@ -1,12 +1,14 @@
-import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { FaSearch, FaShoppingCart } from "react-icons/fa";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
-import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
-import Flex from "../../designLayouts/Flex";
-import { Link, useNavigate } from "react-router-dom";
-
 import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { paginationItems } from "../../../constants";
+import Flex from "../../designLayouts/Flex";
+
+// import { Link } from "react-router-dom";
+import Futbolka from "../../pageProps/shopPage/shopBy/Futbolka";
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.orebiReducer.products);
@@ -22,13 +24,13 @@ const HeaderBottom = () => {
         setShow(false);
       }
     };
-  
+
     document.body.addEventListener("click", handleClick);
-  
+
     return () => {
       document.body.removeEventListener("click", handleClick);
     };
-  }, [show, ref]); 
+  }, [show, ref]);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -64,22 +66,24 @@ const HeaderBottom = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute top-36 z-50 bg-primeColor w-auto text-[#767676] h-auto p-4 pb-6"
               >
+                <Link
+                  to="futbolka"
+                  className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer"
+                >
+                  Futbolkalar
+                </Link>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                Futbolkalar
+                  Ryugzaklar
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                 Ryugzaklar
+                  Formalar
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-               Formalar
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                Oyoq kiyimlar
+                  Oyoq kiyimlar
                 </li>
                 <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                Sumkalar
+                  Sumkalar
                 </li>
-                
               </motion.ul>
             )}
           </div>
@@ -167,13 +171,13 @@ const HeaderBottom = () => {
             )}
           </div> */}
           <Link to="/cart">
-              <div className="relative">
-                <FaShoppingCart />
-                <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
-                  {products.length > 0 ? products.length : 0}
-                </span>
-              </div>
-            </Link>
+            <div className="relative">
+              <FaShoppingCart />
+              <span className="absolute font-titleFont top-3 -right-2 text-xs w-4 h-4 flex items-center justify-center rounded-full bg-primeColor text-white">
+                {products.length > 0 ? products.length : 0}
+              </span>
+            </div>
+          </Link>
         </Flex>
       </div>
     </div>
