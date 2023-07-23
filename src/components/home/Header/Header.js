@@ -7,10 +7,6 @@ import { logoLight } from "../../../assets/images";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
 import Image from "../../designLayouts/Image";
-import Formalar from "../../pageProps/shopPage/shopBy/Formalar";
-import Futbolka from "../../pageProps/shopPage/shopBy/Futbolka";
-import Ryukzak from "../../pageProps/shopPage/shopBy/Ryukzak";
-import Shoes from "../../pageProps/shopPage/shopBy/Shoes";
 import Legend from "./Legend.png";
 
 const Header = () => {
@@ -111,21 +107,6 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          <Route>
-                            <Route
-                              path="/futbolka"
-                              element={<Futbolka />}
-                            ></Route>
-                            <Route
-                              path="/formalar"
-                              element={<Formalar />}
-                            ></Route>
-                            <Route
-                              path="/ryukzak"
-                              element={<Ryukzak />}
-                            ></Route>
-                            <Route path="/shoes" element={<Shoes />}></Route>
-                          </Route>{" "}
                           {/* <li className="headerSedenavLi">Futbolkalar</li>
                           <li className="headerSedenavLi">Sumkalar</li>
                           <li className="headerSedenavLi">Oyoq kiyimlar</li>

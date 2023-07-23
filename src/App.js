@@ -25,6 +25,10 @@ import Shop from "./pages/Shop/Shop";
 import MyComponent from "./mycomponent";
 import Buyurtmalaringiz from "./components/pageProps/shopPage/Buyurtmalaringiz";
 import Futbolka from "./components/pageProps/shopPage/shopBy/Futbolka";
+import Formalar from "./components/pageProps/shopPage/shopBy/Formalar";
+import Ryukzak from "./components/pageProps/shopPage/shopBy/Ryukzak";
+import Shoes from "./components/pageProps/shopPage/shopBy/Shoes";
+import Sumkalar from "./components/pageProps/shopPage/shopBy/Sumkalar";
 
 const Layout = () => {
   return (
@@ -54,6 +58,10 @@ const router = createBrowserRouter(
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/paymentgateway" element={<Payment />}></Route>
         <Route path="/futbolka" element={<Futbolka />}></Route>
+        <Route path="/formalar" element={<Formalar />}></Route>
+        <Route path="/ryugzak" element={<Ryukzak />}></Route>
+        <Route path="/shoes" element={<Shoes />}></Route>
+        <Route path="/sumkalar" element={<Sumkalar />}></Route>
       </Route>
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>

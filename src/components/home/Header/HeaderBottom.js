@@ -8,7 +8,6 @@ import { paginationItems } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
 
 // import { Link } from "react-router-dom";
-import Futbolka from "../../pageProps/shopPage/shopBy/Futbolka";
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.orebiReducer.products);
@@ -72,18 +71,30 @@ const HeaderBottom = () => {
                 >
                   Futbolkalar
                 </Link>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                <Link
+                  to="ryugzak"
+                  className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer"
+                >
                   Ryugzaklar
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                </Link>
+                <Link
+                  to="formalar"
+                  className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer"
+                >
                   Formalar
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                </Link>
+                <Link
+                  to="shoes"
+                  className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer"
+                >
                   Oyoq kiyimlar
-                </li>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                </Link>
+                <Link
+                  to="sumkalar"
+                  className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400  hover:border-b-white hover:text-white duration-300 cursor-pointer"
+                >
                   Sumkalar
-                </li>
+                </Link>
               </motion.ul>
             )}
           </div>

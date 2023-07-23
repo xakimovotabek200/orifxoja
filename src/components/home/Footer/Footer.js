@@ -30,9 +30,7 @@ const Footer = () => {
         <div className="col-span-2">
           <FooterListTitle title="Legend ishonchli tanlov" />
           <div className="flex flex-col gap-6">
-            <p className="text-base w-full xl:w-[80%]">
-          
-            </p>
+            <p className="text-base w-full xl:w-[80%]"></p>
             <ul className="flex items-center gap-2">
               <a
                 href="https://www.youtube.com/@reactjsBD"
@@ -77,36 +75,30 @@ const Footer = () => {
           <FooterListTitle title="Sotuv Bo'limi" />
           <ul className="flex flex-col gap-2">
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Sumka
+              Biz bilan bog'lanish
             </li>
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Forma
+              Biz xaqimizda
             </li>
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Futbolka
+              Aloqa
             </li>
             <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Ryugzak
-            </li>
-            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
-              Oyoq kiyimlar
+              Vakansiyalar
             </li>
           </ul>
         </div>
         <div>
           <FooterListTitle title="Accountingiz" />
           <ul className="flex flex-col gap-2">
-            
-            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">  Buyurmalaringiz
+            <li className="font-titleFont text-base text-lightText hover:text-black hover:underline decoration-[1px] decoration-gray-500 underline-offset-2 cursor-pointer duration-300">
+              {" "}
+              Buyurmalaringiz
             </li>
-            
           </ul>
         </div>
         <div>
-          <FooterListTitle title="Accountingiz" />
-          sadnkk
         </div>
-      
       </div>
     </div>
   );
