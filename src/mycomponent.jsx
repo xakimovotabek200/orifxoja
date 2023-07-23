@@ -22,7 +22,7 @@ const MyComponent = () => {
   return (
     <div>
       {Array.isArray(products)
-        ? products.map((item, index) => <h1 key={index}>{item.name}</h1>)
+        ? products.map((item, index) => <h1 key={index}>{item.cost}</h1>)
         : null}
     </div>
   );
