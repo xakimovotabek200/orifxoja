@@ -35,7 +35,7 @@ const SpecialOffers = () => {
           _id="1103"
           img={spfThree}
           productName="Headphones"
-          price="25.00"
+          price="25"
           color="Mixed"
           badge={true}
           des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."

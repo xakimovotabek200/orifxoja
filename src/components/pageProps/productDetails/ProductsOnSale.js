@@ -1,28 +1,38 @@
-import React from "react";
-import { SplOfferData } from "../../../constants";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const ProductsOnSale = () => {
+  const [products, setProducts] = useState("");
+  const fetchUser = async () => {
+    const fetchUserUrl =
+      "https://komiljonovdev.uz/Bobur/legendApi/api/getProduct";
+    try {
+      const response = await axios.get(fetchUserUrl);
+      setProducts(response.data.products);
+      console.log(response.data);
+    } catch (error) {
+      console.error("fetchUser xatolik", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchUser();
+  }, []);
+
   return (
     <div>
       <h3 className="font-titleFont text-xl font-semibold mb-6 underline underline-offset-4 decoration-[1px]">
         Aksiyadagi mahsukotlar
       </h3>
       <div className="flex flex-col gap-2">
-        {SplOfferData.map((item) => (
-          <div
-            key={item._id}
-            className="flex items-center gap-4 border-b-[1px] border-b-gray-300 py-2"
-          >
-            <div>
-              <img className="w-24" src={item.img} alt={item.img} />
-            </div>
-            <div className="flex flex-col gap-2 font-titleFont">
-              <p className="text-base font-medium">{item.productName}</p>
-              <p className="text-sm font-semibold">${item.price}</p>
-            </div>
-          </div>
-        ))}
+        
       </div>
+      {/* {products.map((product, index) => (
+        <div key={index}>
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+        </div>
+      ))} */}
     </div>
   );
 };
