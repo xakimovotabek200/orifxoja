@@ -20,8 +20,8 @@ import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
-import MyComponent from "./mycomponent";
-import Buyurtmalaringiz from "./components/pageProps/shopPage/Buyurtmalaringiz";
+// import MyComponent from "./mycomponent";
+// import Buyurtmalaringiz from "./components/pageProps/shopPage/Buyurtmalaringiz";
 import Futbolka from "./components/pageProps/shopPage/shopBy/Futbolka";
 import Formalar from "./components/pageProps/shopPage/shopBy/Formalar";
 import Ryukzak from "./components/pageProps/shopPage/shopBy/Ryukzak";
@@ -48,7 +48,6 @@ const router = createBrowserRouter(
         <Route index element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route path="/buyurtmalaringiz" element={<Buyurtmalaringiz />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/journal" element={<Journal />}></Route>
         <Route path="/offer" element={<Offer />}></Route>
@@ -69,9 +68,10 @@ function App() {
   return (
     <div className="font-bodyFont">
       <RouterProvider router={router} />
-      <MyComponent />
+      {/* <MyComponent /> */}
     </div>
   );
 }
 
 export default App;
+

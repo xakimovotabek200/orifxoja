@@ -20,7 +20,7 @@ const BestSellers = () => {
     }, [])
   return (
     <div className="w-full pb-20">
-      <Heading heading="Bizning bestsellerlarimiz" />
+      <Heading heading="Bizning tavarlarimiz" />
       {
         data?.map((item) => {
           return (
@@ -28,27 +28,6 @@ const BestSellers = () => {
         <Product
           key={item.id}
           img={bestSellerOne}
-          productName={item.category}
-          price={item.cost}
-          des={item.description}
-        />
-        <Product
-          key={item.id}
-          img={bestSellerTwo}
-          productName={item.category}
-          price={item.cost}
-          des={item.description}
-        />
-        <Product
-          key={item.id}
-          img={bestSellerThree}
-          productName={item.category}
-          price={item.cost}
-          des={item.description}
-        />
-        <Product
-          key={item.id}
-          img={bestSellerFour}
           productName={item.category}
           price={item.cost}
           des={item.description}

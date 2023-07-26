@@ -107,11 +107,6 @@ const Header = () => {
                           transition={{ duration: 0.4 }}
                           className="text-sm flex flex-col gap-1"
                         >
-                          {/* <li className="headerSedenavLi">Futbolkalar</li>
-                          <li className="headerSedenavLi">Sumkalar</li>
-                          <li className="headerSedenavLi">Oyoq kiyimlar</li>
-                          <li className="headerSedenavLi">Ryugzaklar</li>
-                          <li className="headerSedenavLi">Formalar</li> */}
                         </motion.ul>
                       )}
                     </div>

@@ -36,7 +36,7 @@ const Cart = () => {
         <div className="pb-20">
           <div className="w-full h-20 bg-[#F5F7F7] text-primeColor hidden lgl:grid grid-cols-5 place-content-center px-6 text-lg font-titleFont font-semibold">
             <h2 className="col-span-2">
-Mahsulot</h2>
+Mahsulotlar</h2>
             <h2>Narxi</h2>
             <h2>
 Miqdori</h2>

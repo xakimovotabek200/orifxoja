@@ -32,27 +32,6 @@ const SpecialOffers = () => {
           price={item.cost}
           des={item.description}
         />
-        <Product
-          key={item.id}
-          img={spfTwo}
-          productName={item.category}
-          price={item.cost}
-          des={item.description}
-        />
-        <Product
-          key={item.id}
-          img={spfThree}
-          productName={item.category}
-          price={item.cost}
-          des={item.description}
-        />
-        <Product
-          key={item.id}
-          img={spfFour}
-          productName={item.category}
-          price={item.cost}
-          des={item.description}
-        />
       </div>
           )
         })
