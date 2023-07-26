@@ -96,25 +96,7 @@ const Banner = () => {
     ],
   };
   return (
-    <div className="w-full bg-white">
-      <Slider {...settings}>
-        <Link to="/offer">
-          <div>
-            <Image imgSrc={bg} />
-          </div>
-        </Link>
-        <Link to="/offer">
-          <div>
-            <Image imgSrc={bg2} />
-          </div>
-        </Link>
-        <Link to="/offer">
-          <div className="bg">
-            <Image imgSrc={bg3} />
-          </div>
-        </Link>
-      </Slider>
-    </div>
+   <h1>salom</h1>
   );
 };
 

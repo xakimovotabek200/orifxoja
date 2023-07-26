@@ -1,8 +1,6 @@
 import logo from "./orebiLogo.png";
 import logoLight from "./logoLight.png";
-import bg from "./banner/bg.jpg";
-import bg2 from "./banner/bg2.jpg";
-import bg3 from "./banner/bg3.jpg";
+
 
 // ============== Products Start here ====================
 // New Arrivals
