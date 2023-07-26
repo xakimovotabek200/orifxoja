@@ -23,7 +23,6 @@ const Shop = () => {
           <Pagination itemsPerPage={itemsPerPage} />
         </div>
       </div>
-      {/* ================= Products End here ===================== */}
     </div>
   );
 };

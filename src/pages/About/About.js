@@ -13,14 +13,14 @@ const About = () => {
       <Breadcrumbs title="About" prevLocation={prevLocation} />
       <div className="pb-10">
         <h1 className="max-w-[600px] text-base text-lightText mb-2">
-          <span className="text-primeColor font-semibold text-lg">Orebi</span>{" "}
-          dunyodagi yetakchi elektron tijorat brendlaridan biri va xalqaro miqyosda
-          klassik Worldwide salqin mohiyatini nishonlash uchun tan olingan
-          qarash uslubi.
+          <span className="text-primeColor font-semibold text-lg">Legeng</span>{" "}
+          dunyodagi yetakchi elektron tijorat brendlaridan biri va xalqaro
+          miqyosda klassik Worldwide salqin mohiyatini nishonlash uchun tan
+          olingan qarash uslubi.
         </h1>
         <Link to="/shop">
           <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
-          Xarid qilishda davom eting
+            Xarid qilishda davom eting
           </button>
         </Link>
       </div>

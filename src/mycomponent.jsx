@@ -41,24 +41,27 @@ function Mycomponent() {
   return (
     <form onSubmit={HandelArea}>
       <input
+        className="w-full py-1 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
         type="text"
-        placeholder="text"
+        placeholder="Matn"
         onChange={pocketInfo}
         name="name"
         value={value.name}
       />
       <br />
       <input
+        className="w-full py-1 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
         type="text"
-        placeholder="addres"
+        placeholder="manzil"
         onChange={pocketInfo}
         name="location"
         value={value.location}
       />
       <br />
       <input
+        className="w-full py-1 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
         type="phone"
-        placeholder="phone"
+        placeholder="telefon raqam"
         onChange={pocketInfo}
         name="phone"
         value={value.phone}
@@ -66,14 +69,20 @@ function Mycomponent() {
       <br />
 
       <input
+        className="w-full py-1 border-b-2 px-2 text-base  font-medium placeholder:font-normal placeholder:text-xl outline-none focus-within:border-primeColor"
         type="text"
-        placeholder="product"
+        placeholder="mahsulot"
         onChange={pocketInfo}
         name="product"
         value={value.product}
       />
       <br />
-      <button onClick={addApplication}>click it</button>
+      <button
+        onClick={addApplication}
+        className="bg-primeColor text-white rounded-xl text-lg mt-6 font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold"
+      >
+        Arizani jonatish
+      </button>
     </form>
   );
 }
