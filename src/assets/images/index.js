@@ -1,8 +1,8 @@
 import logo from "./orebiLogo.png";
 import logoLight from "./logoLight.png";
-import bannerImgOne from "./banner/bannerImgOne.webp";
-import bannerImgTwo from "./banner/bannerImgTwo.webp";
-import bannerImgThree from "./banner/bannerImgThree.webp";
+import bg from "./banner/bg.jpg";
+import bg2 from "./banner/bg2.jpg";
+import bg3 from "./banner/bg3.jpg";
 
 // ============== Products Start here ====================
 // New Arrivals
@@ -32,9 +32,9 @@ import emptyCart from "../images/emptyCart.png";
 export {
   logo,
   logoLight,
-  bannerImgOne,
-  bannerImgTwo,
-  bannerImgThree,
+  bg,
+  bg2,
+  bg3,
   // ===================== Products start here ============
   // New Arrivals
   newArrOne,
