@@ -24,9 +24,9 @@ const Futbolka = () => {
       {Array.isArray(data) ?
         data.map((item) => {
           return (
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10" key={item.id}>
         <Product
-          key={item.id}
+          
           img={spfOne}
           productName={item.category_name}
           
