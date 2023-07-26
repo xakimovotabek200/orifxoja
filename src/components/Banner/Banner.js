@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import Slider from "react-slick";
-import { bg, bg2, bg3 } from "../../assets/images";
-import Image from "../designLayouts/Image";
 
 const Banner = () => {
   const [dotActive, setDocActive] = useState(0);
@@ -95,9 +91,7 @@ const Banner = () => {
       },
     ],
   };
-  return (
-   <h1>salom</h1>
-  );
+  return <h1>salom</h1>;
 };
 
 export default Banner;
