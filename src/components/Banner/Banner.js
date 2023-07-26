@@ -103,17 +103,17 @@ const Banner = () => {
     <div className="w-full bg-white">
       <Slider {...settings}>
         <Link to="/offer">
-          <div>
+          <div style={{width: "100%", height: "800px"}}>
             <Image imgSrc={bannerImgOne} />
           </div>
         </Link>
         <Link to="/offer">
-          <div>
+          <div style={{width: "100%", height: "800px"}}>
             <Image imgSrc={bannerImgTwo} />
           </div>
         </Link>
         <Link to="/offer">
-          <div>
+          <div style={{width: "100%", height: "800px"}}>
             <Image imgSrc={bannerImgThree} />
           </div>
         </Link>

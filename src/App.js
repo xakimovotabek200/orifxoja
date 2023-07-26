@@ -12,8 +12,6 @@ import Header from "./components/home/Header/Header";
 import HeaderBottom from "./components/home/Header/HeaderBottom";
 import SpecialCase from "./components/SpecialCase/SpecialCase";
 import About from "./pages/About/About";
-import SignIn from "./pages/Account/SignIn";
-import SignUp from "./pages/Account/SignUp";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
@@ -63,8 +61,6 @@ const router = createBrowserRouter(
         <Route path="/shoes" element={<Shoes />}></Route>
         <Route path="/sumkalar" element={<Sumkalar />}></Route>
       </Route>
-      <Route path="/signup" element={<SignUp />}></Route>
-      <Route path="/signin" element={<SignIn />}></Route>
     </Route>
   )
 );

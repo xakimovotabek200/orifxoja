@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
 import {
@@ -9,47 +9,54 @@ import {
 } from "../../../assets/images/index";
 
 const SpecialOffers = () => {
+  const [data, setData] = useState([])
+  useEffect(() => {
+      fetch('http://komiljonovdev.uz/Bobur/legendApi/api/getProduct')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.products);
+          setData(data.products)
+        })
+    }, [])
   return (
     <div className="w-full pb-20">
       <Heading heading="Maxsus takliflar" />
-      <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
+      {
+        data?.map((item) => {
+          return (
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lgl:grid-cols-3 xl:grid-cols-4 gap-10">
         <Product
-          _id="1101"
+          key={item.id}
           img={spfOne}
-          productName="Cap for Boys"
-          price="35.00" 
-          color="Blank and White"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          productName={item.category}
+          price={item.cost}
+          des={item.description}
         />
         <Product
-          _id="1102"
+          key={item.id}
           img={spfTwo}
-          productName="Tea Table"
-          price="180.00"
-          color="Gray"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          productName={item.category}
+          price={item.cost}
+          des={item.description}
         />
         <Product
-          _id="1103"
+          key={item.id}
           img={spfThree}
-          productName="Headphones"
-          price="25"
-          color="Mixed"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          productName={item.category}
+          price={item.cost}
+          des={item.description}
         />
         <Product
-          _id="1104"
+          key={item.id}
           img={spfFour}
-          productName="Sun glasses"
-          price="220.00"
-          color="Black"
-          badge={true}
-          des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
+          productName={item.category}
+          price={item.cost}
+          des={item.description}
         />
       </div>
+          )
+        })
+      }
     </div>
   );
 };

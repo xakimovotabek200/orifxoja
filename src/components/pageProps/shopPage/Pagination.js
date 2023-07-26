@@ -3,6 +3,8 @@ import ReactPaginate from "react-paginate";
 import Product from "../../home/Products/Product";
 import { paginationItems } from "../../../constants";
 
+
+
 const items = paginationItems;
 function Items({ currentItems }) {
   return (
@@ -26,10 +28,18 @@ function Items({ currentItems }) {
 }
 
 const Pagination = ({ itemsPerPage }) => {
+  const [fetchPaginations, setFetchPaginations] = useState("");
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
   const [itemStart, setItemStart] = useState(1);
+
+  fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getProduct")
+  .then(res=>res.json())
+  .then(res=>{
+    console.log(res.products);
+    setFetchPaginations(res.products)
+  })
 
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
@@ -52,7 +62,102 @@ const Pagination = ({ itemsPerPage }) => {
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mdl:gap-4 lg:gap-10">
-        <Items currentItems={currentItems} />
+        {/* <Items currentItems={currentItems} /> */}
+        {Array.isArray(fetchPaginations) ?  fetchPaginations.map((fetchItem, index)=>{
+          return(
+            <>
+            <div style={{width: "100%"}} key={fetchItem.id}>
+              <div style={{width: "1000px", display: "flex", alignItems: "center",marginTop: "30px"}}>
+              <div style={{ width: "100%", marginLeft: "10px"}}>
+              <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+              </div>
+        <div style={{ width: "100%", marginLeft: "10px"}}>
+        <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+        </div>
+        <div style={{width: "100%", marginLeft: "10px"}}>
+        <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+        </div>
+              </div>
+              <div style={{width: "1000px", display: "flex", alignItems: "center",marginTop: "30px"}}>
+              <div style={{ width: "100%", marginLeft: "10px"}}>
+              <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+              </div>
+        <div style={{ width: "100%", marginLeft: "10px"}}>
+        <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+        </div>
+        <div style={{width: "100%", marginLeft: "10px"}}>
+        <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+        </div>
+              </div>
+              <div style={{width: "1000px", display: "flex", alignItems: "center",marginTop: "30px"}}>
+              <div style={{ width: "100%", marginLeft: "10px"}}>
+              <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+              </div>
+        <div style={{ width: "100%", marginLeft: "10px"}}>
+        <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+        </div>
+        <div style={{width: "100%", marginLeft: "10px"}}>
+        <Product
+          // _id={fetchItem.id}
+          img={fetchItem.image}
+          productName={fetchItem.category}
+          price={fetchItem.cost}
+          des={fetchItem.description}
+        />
+        </div>
+              </div>
+            </div>
+            </>
+          )
+        }) : null}
       </div>
       <div className="flex flex-col mdl:flex-row justify-center mdl:justify-between items-center">
         <ReactPaginate

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Slider from "react-slick";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
@@ -14,7 +14,7 @@ import SamplePrevArrow from "./SamplePrevArrow";
 const NewArrivals = () => {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 4,
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
@@ -46,66 +46,63 @@ const NewArrivals = () => {
       },
     ],
   };
+  const [data, setData] = useState([])
+  useEffect(() => {
+      fetch('http://komiljonovdev.uz/Bobur/legendApi/api/getProduct')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.products);
+          setData(data.products)
+        })
+    }, [])
+
   return (
     <div className="w-full pb-16">
       <Heading heading="Yangi kelganlar" />
-      <Slider {...settings}>
-        <div className="px-2">
-          <Product
-            _id="100001"
-            img={newArrOne}
-            productName="Round Table Clock"
-            price="44.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100002"
-            img={newArrTwo}
-            productName="Smart Watch"
-            price="250.00"
-            color="Black"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100003"
-            img={newArrThree}
-            productName="cloth Basket"
-            price="80.00"
-            color="Mixed"
-            badge={true}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100004"
-            img={newArrFour}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
-        <div className="px-2">
-          <Product
-            _id="100005"
-            img={newArrTwo}
-            productName="Funny toys for babies"
-            price="60.00"
-            color="Mixed"
-            badge={false}
-            des="Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic excepturi quibusdam odio deleniti reprehenderit facilis."
-          />
-        </div>
+      {
+        data?.map((item) => {
+          return (
+            <Slider {...settings} key={item.id}>
+    <div className="px-2">
+        <Product
+         key={item.id}
+          img={newArrOne}
+          productName={item.name}
+          price={item.cost}
+          des={item.description}
+        />
+      </div> 
+      <div className="px-2">
+              <Product
+                key={item.id}
+                img={newArrTwo}
+                productName={item.name}
+                price={item.cost}
+                des={item.description}
+              />
+            </div> 
+            <div className="px-2">
+              <Product
+                key={item.id}
+                img={newArrThree}
+                productName={item.name}
+                price={item.cost}
+                des={item.description}
+              />
+            </div> 
+            <div className="px-2">
+              <Product
+                key={item.id}
+                img={newArrFour}
+                productName={item.category}
+                price={item.cost}
+                des={item.description}
+              />
+            </div> 
       </Slider>
+          )
+        })
+      }
     </div>
   );
 };
