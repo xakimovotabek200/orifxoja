@@ -81,7 +81,7 @@ function Mycomponent() {
         onClick={addApplication}
         className="bg-primeColor text-white rounded-xl text-lg mt-6 font-bodyFont w-[185px] h-[50px] hover:bg-black duration-300 font-bold"
       >
-        Arizani jo'natish
+        Arizani jonatish
       </button>
     </form>
   );
