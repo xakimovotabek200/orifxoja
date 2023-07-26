@@ -1,201 +1,135 @@
-import React, { useState } from "react";
-import { BsCheckCircleFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
-import { logoLight } from "../../assets/images";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
-const SignIn = () => {
-  // ============= Initial State Start here =============
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  // ============= Initial State End here ===============
-  // ============= Error Msg Start here =================
-  const [errEmail, setErrEmail] = useState("");
-  const [errPassword, setErrPassword] = useState("");
+const Signin = () => {
 
-  // ============= Error Msg End here ===================
-  const [successMsg, setSuccessMsg] = useState("");
-  // ============= Event Handler Start here =============
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-    setErrEmail("");
-  };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-    setErrPassword("");
-  };
-  // ============= Event Handler End here ===============
-  const handleSignUp = (e) => {
+  const [formvalue, setFormvalue]= useState({name:'',password:'' });
+  const [isLogin, setIslogin] = useState(false);
+  const navigate = useNavigate();
+  const handleInput =(e)=>{
+    const { name, value}= e.target;
+    setFormvalue({...formvalue, [name]:value});
+    //console.log(formvalue);
+  }
+  const handleFormsubmit= async (e)=>{
     e.preventDefault();
+    
+   await fetch('http://komiljonovdev.uz/Bobur/legendApi/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name:formvalue.name,
+        password: formvalue.password,
+        login: "legend-admin"
+      })
+    })
+    .then(response=>response.json())
+    .then(response=>{
+  Cookies.set(response)
+      if(response.ok === true){
+        navigate(window.location.href = "https://youtube.com") 
+      }else{
+        setIslogin(true);
+      }
+    })
+   
 
-    if (!email) {
-      setErrEmail("Enter your email");
-    }
+  }
 
-    if (!password) {
-      setErrPassword("Create a password");
-    }
-    // ============== Getting the value ==============
-    if (email && password) {
-      setSuccessMsg(
-        `Hello dear, Thank you for your attempt. We are processing to validate your access. Till then stay connected and additional assistance will be sent to you by your mail at ${email}`
-      );
-      setEmail("");
-      setPassword("");
-    }
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    showPassword: false,
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
+
+  const togglePasswordVisibility = () => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      showPassword: !prevFormData.showPassword,
+    }));
+  };
+
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      <div className="w-1/2 hidden lgl:inline-flex h-full text-white">
-        <div className="w-[450px] h-full bg-primeColor px-10 flex flex-col gap-6 justify-center">
-          <Link to="/">
-            <img src={logoLight} alt="logoImg" className="w-28" />
-          </Link>
-          <div className="flex flex-col gap-1 -mt-1">
-            <h1 className="font-titleFont text-xl font-medium">
-Batafsil maʼlumot uchun tizimda qoling
-            </h1>
-            <p className="text-base">Tizimga kirganingizda biz bilan birgasiz!</p>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 shadow-md rounded-md w-96">
+        <h2 className="text-2xl font-semibold mb-6">Tizimga Kirish</h2>
+        <form onSubmit={handleFormsubmit}>
+          <div className="mb-4">
+            <label htmlFor="name" className="block text-gray-700">Login</label>
+            <input
+              type="name"
+              id="name"
+              name='name'
+              style={{border:"2px solid blue", outline:"none", fontWeight:"bolder",fontSize:"20px"}}
+              value={formvalue.name} onChange={ handleInput} 
+              className="w-full border-gray-300 rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500 px-3 py-2"
+              autoComplete='off'
+              required
+            />
           </div>
-          <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
-              <BsCheckCircleFill />
-            </span>
-            <p className="text-base text-gray-300">
-              <span className="text-white font-semibold font-titleFont">
-OREBI bilan tezda boshlang
-              </span>
-              <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
-            </p>
-          </div>
-          <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
-              <BsCheckCircleFill />
-            </span>
-            <p className="text-base text-gray-300">
-              <span className="text-white font-semibold font-titleFont">
-Barcha OREBI xizmatlariga kirish
-              </span>
-              <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
-            </p>
-          </div>
-          <div className="w-[300px] flex items-start gap-3">
-            <span className="text-green-500 mt-1">
-              <BsCheckCircleFill />
-            </span>
-            <p className="text-base text-gray-300">
-              <span className="text-white font-semibold font-titleFont">
-              Onlayn xaridorlar tomonidan ishonchli
-              </span>
-              <br />
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
-              nisi dolor recusandae consectetur!
-            </p>
-          </div>
-          <div className="flex items-center justify-between mt-10">
-            <Link to="/">
-              <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-                © OREBI
-              </p>
-            </Link>
-            <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-            Shartlar
-            </p>
-            <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-Maxfiylik
-            </p>
-            <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
-Xavfsizlik
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="w-full lgl:w-1/2 h-full">
-        {successMsg ? (
-          <div className="w-full lgl:w-[500px] h-full flex flex-col justify-center">
-            <p className="w-full px-4 py-10 text-green-500 font-medium font-titleFont">
-              {successMsg}
-            </p>
-            <Link to="/signup">
-              <button
-                className="w-full h-10 bg-primeColor text-gray-200 rounded-md text-base font-titleFont font-semibold 
-            tracking-wide hover:bg-black hover:text-white duration-300"
-              >
-                Ro'yxatdan o'tish
-              </button>
-            </Link>
-          </div>
-        ) : (
-          <form className="w-full lgl:w-[450px] h-screen flex items-center justify-center">
-            <div className="px-6 py-4 w-full h-[90%] flex flex-col justify-center overflow-y-scroll scrollbar-thin scrollbar-thumb-primeColor">
-              <h1 className="font-titleFont underline underline-offset-4 decoration-[1px] font-semibold text-3xl mdl:text-4xl mb-4">
-                Tizimga kirish
-              </h1>
-              <div className="flex flex-col gap-3">
-                {/* Email */}
-                <div className="flex flex-col gap-.5">
-                  <p className="font-titleFont text-base font-semibold text-gray-600">
-                  Ishchi elektron pochta
-                  </p>
-                  <input
-                    onChange={handleEmail}
-                    value={email}
-                    className="w-full h-8 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
-                    type="email"
-                    placeholder="john@workemail.com"
-                  />
-                  {errEmail && (
-                    <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
-                      <span className="font-bold italic mr-1">!</span>
-                      {errEmail}
-                    </p>
-                  )}
-                </div>
-
-                {/* Password */}
-                <div className="flex flex-col gap-.5">
-                  <p className="font-titleFont text-base font-semibold text-gray-600">
-                  Parol
-                  </p>
-                  <input
-                    onChange={handlePassword}
-                    value={password}
-                    className="w-full h-8 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
-                    type="password"
-                    placeholder="Create password"
-                  />
-                  {errPassword && (
-                    <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
-                      <span className="font-bold italic mr-1">!</span>
-                      {errPassword}
-                    </p>
-                  )}
-                </div>
-
-                <button
-                  onClick={handleSignUp}
-                  className="bg-primeColor hover:bg-black text-gray-200 hover:text-white cursor-pointer w-full text-base font-medium h-10 rounded-md  duration-300"
+          <div className="mb-4 relative">
+            <label htmlFor="password" className="block text-gray-700">Password</label>
+            <input
+              type={formData.showPassword ? 'text' : 'password'}
+              id="password"
+              name='password'
+              style={{border:"2px solid blue", outline:"none", fontWeight:"bolder",fontSize:"20px"}}
+              value={formvalue.password} onChange={ handleInput}
+              className="w-full rounded-md focus:ring focus:ring-blue-200 focus:border-blue-500 px-3 py-2"
+              required
+            />
+            <button
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute right-3 top-12 transform -translate-y-1/2 cursor-pointer"
+            >
+              {formData.showPassword ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  Tizimga kirish
-                </button>
-                <p className="text-sm text-center font-titleFont font-medium">
-                  Don't have an Account?{" "}
-                  <Link to="/signup">
-                    <span className="hover:text-blue-600 duration-300">
-Ro'yxatdan o'tish
-                    </span>
-                  </Link>
-                </p>
-              </div>
-            </div>
-          </form>
-        )}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 15.536a9.94 9.94 0 002.857 2.857M9.536 5.121a9.94 9.94 0 002.857 2.857M7.05 7.05a14.04 14.04 0 013.465 3.465M12 2v4m0 16v4m8-10a13.963 13.963 0 01-3.465 3.465M7.05 16.95a14.04 14.04 0 01-3.465-3.465M16.95 7.05a14.04 14.04 0 013.465-3.465M2 12h4m16 0h4" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 text-gray-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.121 15.536a9.94 9.94 0 002.857 2.857M9.536 5.121a9.94 9.94 0 002.857 2.857M7.05 7.05a14.04 14.04 0 013.465 3.465M12 2v4m0 16v4m8-10a13.963 13.963 0 01-3.465 3.465M7.05 16.95a14.04 14.04 0 01-3.465-3.465M16.95 7.05a14.04 14.04 0 013.465-3.465M2 12h4m16 0h4" />
+                </svg>
+              )}
+            </button>
+            {isLogin? <p className='text-[red]'>Siz parolni yoki ismni xato kiritdingiz !</p>: null}
+
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md"
+          >
+            Jo'natish
+          </button>
+        </form>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default Signin;

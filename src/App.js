@@ -1,34 +1,33 @@
 import {
-  createBrowserRouter,
-  RouterProvider,
   Outlet,
-  createRoutesFromElements,
   Route,
+  RouterProvider,
   ScrollRestoration,
+  createBrowserRouter,
+  createRoutesFromElements,
 } from "react-router-dom";
+import Json from "./components/Json";
+import SpecialCase from "./components/SpecialCase/SpecialCase";
 import Footer from "./components/home/Footer/Footer";
 import FooterBottom from "./components/home/Footer/FooterBottom";
 import Header from "./components/home/Header/Header";
 import HeaderBottom from "./components/home/Header/HeaderBottom";
-import SpecialCase from "./components/SpecialCase/SpecialCase";
+import Buyurtmalaringiz from "./components/pageProps/shopPage/Buyurtmalaringiz";
+import Formalar from "./components/pageProps/shopPage/shopBy/Formalar";
+import Futbolka from "./components/pageProps/shopPage/shopBy/Futbolka";
+import Ryukzak from "./components/pageProps/shopPage/shopBy/Ryukzak";
+import Shoes from "./components/pageProps/shopPage/shopBy/Shoes";
+import Sumkalar from "./components/pageProps/shopPage/shopBy/Sumkalar";
 import About from "./pages/About/About";
 import SignIn from "./pages/Account/SignIn";
-import SignUp from "./pages/Account/SignUp";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
-import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Shop from "./pages/Shop/Shop";
-import MyComponent from "./mycomponent";
-import Buyurtmalaringiz from "./components/pageProps/shopPage/Buyurtmalaringiz";
-import Futbolka from "./components/pageProps/shopPage/shopBy/Futbolka";
-import Formalar from "./components/pageProps/shopPage/shopBy/Formalar";
-import Ryukzak from "./components/pageProps/shopPage/shopBy/Ryukzak";
-import Shoes from "./components/pageProps/shopPage/shopBy/Shoes";
-import Sumkalar from "./components/pageProps/shopPage/shopBy/Sumkalar";
+import Payment from "./pages/payment/Payment";
 
 const Layout = () => {
   return (
@@ -40,6 +39,7 @@ const Layout = () => {
       <Outlet />
       <Footer />
       <FooterBottom />
+      <Json/>
     </div>
   );
 };
@@ -63,7 +63,6 @@ const router = createBrowserRouter(
         <Route path="/shoes" element={<Shoes />}></Route>
         <Route path="/sumkalar" element={<Sumkalar />}></Route>
       </Route>
-      <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>
     </Route>
   )
@@ -73,7 +72,7 @@ function App() {
   return (
     <div className="font-bodyFont">
       <RouterProvider router={router} />
-      <MyComponent />
+
     </div>
   );
 }
