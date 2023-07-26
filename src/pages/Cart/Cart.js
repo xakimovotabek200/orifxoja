@@ -35,11 +35,9 @@ const Cart = () => {
       {products.length > 0 ? (
         <div className="pb-20">
           <div className="w-full h-20 bg-[#F5F7F7] text-primeColor hidden lgl:grid grid-cols-5 place-content-center px-6 text-lg font-titleFont font-semibold">
-            <h2 className="col-span-2">
-Mahsulot</h2>
+            <h2 className="col-span-2">Mahsulot</h2>
             <h2>Narxi</h2>
-            <h2>
-Miqdori</h2>
+            <h2>Miqdori</h2>
             <h2>Sub jami</h2>
           </div>
           <div className="mt-5">
@@ -65,30 +63,29 @@ Miqdori</h2>
                 placeholder="Coupon Number"
               />
               <p className="text-sm mdl:text-base font-semibold">
-              Kuponni qo'llash
+                Kuponni qo'llash
               </p>
             </div>
             <p className="text-lg font-semibold">Savatni yangilash</p>
           </div>
           <div className="max-w-7xl gap-4 flex justify-end mt-4">
             <div className="w-96 flex flex-col gap-4">
-              <h1 className="text-2xl font-semibold text-right">
-Savat jami</h1>
+              <h1 className="text-2xl font-semibold text-right">Savat jami</h1>
               <div>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
-                Oraliq jami
+                  Oraliq jami
                   <span className="font-semibold tracking-wide font-titleFont">
                     ${totalAmt}
                   </span>
                 </p>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
-Yetkazib berish to'lovi
+                  Yetkazib berish to'lovi
                   <span className="font-semibold tracking-wide font-titleFont">
                     ${shippingCharge}
                   </span>
                 </p>
                 <p className="flex items-center justify-between border-[1px] border-gray-400 py-1.5 text-lg px-4 font-medium">
-                Jami
+                  Jami
                   <span className="font-bold tracking-wide text-lg font-titleFont">
                     ${totalAmt + shippingCharge}
                   </span>
@@ -97,7 +94,7 @@ Yetkazib berish to'lovi
               <div className="flex justify-end">
                 <Link to="/paymentgateway">
                   <button className="w-52 h-10 bg-primeColor text-white hover:bg-black duration-300">
-Ro'yxatdan o'chirilishda davom etish
+                    Ro'yxatdan o'chirilishda davom etish
                   </button>
                 </Link>
               </div>
@@ -120,15 +117,16 @@ Ro'yxatdan o'chirilishda davom etish
           </div>
           <div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
             <h1 className="font-titleFont text-xl font-bold uppercase">
-Savatingiz o'zini yolg'iz his qiladi.
+              Savatingiz o'zini yolg'iz his qiladi.
             </h1>
             <p className="text-sm text-center px-10 -mt-2">
-Savatingiz xizmat qilish uchun xizmat qiladi. Maqsad bering - uni to'ldiring
-              kitoblar, elektronika, videolar va boshqalar va uni xursand qiling.
+              Savatingiz xizmat qilish uchun xizmat qiladi. Maqsad bering - uni
+              to'ldiring kitoblar, elektronika, videolar va boshqalar va uni
+              xursand qiling.
             </p>
             <Link to="/shop">
               <button className="bg-primeColor rounded-md cursor-pointer hover:bg-black active:bg-gray-900 px-8 py-2 font-titleFont font-semibold text-lg text-gray-200 hover:text-white duration-300">
-Xarid qilishda davom eting
+                Xarid qilishda davom eting
               </button>
             </Link>
           </div>

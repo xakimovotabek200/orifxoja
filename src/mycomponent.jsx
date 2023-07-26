@@ -1,31 +1,81 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useForm } from "./useFrom";
 
-const MyComponent = () => {
-  const [products, setProducts] = useState("");
-  const fetchUser = async () => {
-    const fetchUserUrl =
-      "https://komiljonovdev.uz/Bobur/legendApi/api/getProduct";
-    try {
-      const response = await axios.get(fetchUserUrl);
-      setProducts(response.data.products);
-      console.log(response.data);
-    } catch (error) {
-      console.error("fetchUser xatolik", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  return (
-    <div>
-      {Array.isArray(products)
-        ? products.map((item, index) => <h1 key={index}>{item.cost}</h1>)
-        : null}
-    </div>
-  );
+const objectApp = {
+  name: "",
+  phone: "",
+  location: "",
+  product: "",
 };
+function Mycomponent() {
+  const [value, pocketInfo] = useForm(objectApp);
+  const HandelArea = (e) => {
+    e.preventDefault();
+    console.log(value);
+  };
+  useEffect(() => {
+    console.log("salom");
+  }, [value.name]);
 
-export default MyComponent;
+  const addApplication = async () => {
+    let headersList = {
+      Accept: "*/*",
+      "Content-Type": "application/json",
+    };
+
+    let bodyContent = JSON.stringify(value);
+
+    let response = await fetch(
+      "https://komiljonovdev.uz/Bobur/legendApi/api/addApplication",
+      {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      }
+    );
+
+    let data = await response.json();
+
+    console.log(bodyContent);
+  };
+  return (
+    <form onSubmit={HandelArea}>
+      <input
+        type="text"
+        placeholder="text"
+        onChange={pocketInfo}
+        name="name"
+        value={value.name}
+      />
+      <br />
+      <input
+        type="text"
+        placeholder="addres"
+        onChange={pocketInfo}
+        name="location"
+        value={value.location}
+      />
+      <br />
+      <input
+        type="phone"
+        placeholder="phone"
+        onChange={pocketInfo}
+        name="phone"
+        value={value.phone}
+      />
+      <br />
+
+      <input
+        type="text"
+        placeholder="product"
+        onChange={pocketInfo}
+        name="product"
+        value={value.product}
+      />
+      <br />
+      <button onClick={addApplication}>click it</button>
+    </form>
+  );
+}
+
+export default Mycomponent;

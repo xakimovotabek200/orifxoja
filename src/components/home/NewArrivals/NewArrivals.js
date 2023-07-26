@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import Heading from "../Products/Heading";
 import Product from "../Products/Product";
@@ -46,33 +46,32 @@ const NewArrivals = () => {
       },
     ],
   };
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   useEffect(() => {
-      fetch('http://komiljonovdev.uz/Bobur/legendApi/api/getProduct')
-        .then(response => response.json())
-        .then(data => {
-          console.log(data.products);
-          setData(data.products)
-        })
-    }, [])
+    fetch("http://komiljonovdev.uz/Bobur/legendApi/api/getProduct")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.products);
+        setData(data.products);
+      });
+  }, []);
 
   return (
     <div className="w-full pb-16">
       <Heading heading="Yangi kelganlar" />
-      {
-        data?.map((item) => {
-          return (
-            <Slider {...settings} key={item.id}>
-    <div className="px-2">
-        <Product
-         key={item.id}
-          img={newArrOne}
-          productName={item.name}
-          price={item.cost}
-          des={item.description}
-        />
-      </div> 
-      <div className="px-2">
+      {data?.map((item) => {
+        return (
+          <Slider {...settings} key={item.id}>
+            <div className="px-2">
+              <Product
+                key={item.id}
+                img={newArrOne}
+                productName={item.name}
+                price={item.cost}
+                des={item.description}
+              />
+            </div>
+            <div className="px-2">
               <Product
                 key={item.id}
                 img={newArrTwo}
@@ -80,7 +79,7 @@ const NewArrivals = () => {
                 price={item.cost}
                 des={item.description}
               />
-            </div> 
+            </div>
             <div className="px-2">
               <Product
                 key={item.id}
@@ -89,7 +88,7 @@ const NewArrivals = () => {
                 price={item.cost}
                 des={item.description}
               />
-            </div> 
+            </div>
             <div className="px-2">
               <Product
                 key={item.id}
@@ -98,11 +97,10 @@ const NewArrivals = () => {
                 price={item.cost}
                 des={item.description}
               />
-            </div> 
-      </Slider>
-          )
-        })
-      }
+            </div>
+          </Slider>
+        );
+      })}
     </div>
   );
 };
