@@ -58,10 +58,11 @@
 
 // export default products;
 
+
 import React from "react";
 
 function mycomponent() {
-  return <div>mycomponent</div>;
+  return <div>apibagi</div>;
 }
 
 export default mycomponent;
